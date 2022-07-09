@@ -5,6 +5,7 @@ import { createRouter } from '../createRouter';
 import { postRouter } from './post';
 import { commentsRouter } from './comments';
 import superjson from 'superjson';
+import { authRouter } from './auth';
 
 /**
  * Create your application's root router
@@ -35,6 +36,7 @@ export const appRouter = createRouter()
    * Merge `postRouter` under `post.`
    */
   .merge('post.', postRouter)
-  .merge('comment.', commentsRouter);
+  .merge('comment.', commentsRouter)
+  .merge('auth.', authRouter);
 
 export type AppRouter = typeof appRouter;
